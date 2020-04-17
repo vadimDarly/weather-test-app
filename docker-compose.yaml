@@ -1,0 +1,16 @@
+version: '3'
+services:
+  front:
+    build:
+      context: ./weather-app-frontend
+    container_name: front-weather
+    restart: unless-stopped
+    ports:
+      - "4200:4200"
+  server:
+    build:
+      context: ./weather-app-backend
+    container_name: backend-weather
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
